@@ -4,22 +4,31 @@
 
 int main(){
 
-    arvore a = NULL;
-    a = inserir(a,50);
-    a = inserir(a,20);
-    a = inserir(a,30);
-    a = inserir(a,40);
-    a = inserir(a,60); 
-    a = inserir(a, 3);
+   arvore a = NULL;
 
-    printf("Pre ordem: \n");
-    preOrder(a);
+   while(1){
 
-    printf("\nEm ordem: \n");
-    inOrder(a);
-
-    printf("\npos ordem: \n");
-    posOrder(a);
+    int opcao;
+    int valor;
+    scanf("%d", &opcao);
+    switch(opcao) {
+        case 1: 
+            scanf("%d", &valor);
+            a = inserir(a, valor);
+            break;
+        case 2: 
+            preOrder(a);
+            printf("\n");
+            break;
+        case 3: 
+            scanf("%d", &valor);
+            a = remover(a, valor);
+            break;
+        case 99:
+            exit(0);
+            break;
+    }
+   }
 
     return 0;
 }
